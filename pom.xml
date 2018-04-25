@@ -17,38 +17,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
   </properties>
-<!--
-  &lt;!&ndash; 使用阿里 maven 库 &ndash;&gt;
-  <repositories>
-    <repository>
-      <id>ali-maven</id>
-      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-  </repositories>-->
-
-  <!-- 添加快照版本库,updatePolicy: always、daily、interval、never -->
-  <!-- repositories>
-  <repository>
-         <id>sonatype-nexus-snapshots</id>
-         <name>Sonatype Nexus Snapshots</name>
-         <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-         <releases>
-             <enabled>false</enabled>
-         </releases>
-         <snapshots>
-             <enabled>true</enabled>
-             <updatePolicy>daily</updatePolicy>
-         </snapshots>
-     </repository>
-    </repositories -->
 
   <dependencies>
     <dependency>
@@ -97,7 +65,17 @@
           <artifactId>junit</artifactId>
           <version>RELEASE</version>
       </dependency>
-
+    <!--flyway-->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>5.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.3.170</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>restaurant</finalName>

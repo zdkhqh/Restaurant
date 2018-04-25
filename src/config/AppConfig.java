@@ -10,6 +10,7 @@ import com.jfinal.render.ViewType;
 import com.jfinal.template.Engine;
 import intercept.SessionIntercept;
 import model._MappingKit;
+import util.FlywayApp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +28,11 @@ public class AppConfig extends JFinalConfig {
          * 特别注意：IDEA 之下的启动方式，仅比 eclipse 之下少了最后一个参数
          */
         JFinal.start("WebRoot", 80, "/");
+    }
+
+    @Override
+    public void afterJFinalStart() {
+
     }
 
     /**
@@ -73,6 +79,9 @@ public class AppConfig extends JFinalConfig {
         // 所有映射在 MappingKit 中自动化搞定
         _MappingKit.mapping(arp);
         me.add(arp);
+
+        //数据库管理
+        me.add(new FlywayApp());
     }
 
     /**
