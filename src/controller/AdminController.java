@@ -15,13 +15,20 @@ public class AdminController extends Controller {
     }
 
     /**
-     * 获得当前管理员信息和时间信息
+     * 获得当前管理员信息和时间信息,后台首页显示用
      */
     public void getCurrent() {
         setCurrentAdmin();
         setAttr("time", TimeUtil.getDateYYYYMMDDEAByTime(TimeUtil.getNow()));
+        renderJson(TimeUtil.getDateYYYYMMDDEAByTime(TimeUtil.getNow()));
     }
 
+    /**
+     * 管理员列表展示
+     */
+    public void getAdminList(){
+
+    }
 
 }
 

@@ -12,7 +12,6 @@ public class LoginController extends Controller {
      */
     public void index() {
         if (AdminService.loginCheck(getParaMap())) {
-            getSession().setMaxInactiveInterval(-1);    //设置永不过期
             renderJson(Ret.ok("date", "登陆成功!"));
         }else{
             renderJson(Ret.fail("error", "登陆失败!"));
@@ -24,7 +23,6 @@ public class LoginController extends Controller {
      */
     public void login() {
         if (AdminService.loginCheck(getParaMap())) {
-            getSession().setMaxInactiveInterval(-1);    //设置永不过期
             renderJson(Ret.ok("date", "登陆成功!"));
         }else{
             renderJson(Ret.fail("error", "登陆失败!"));
