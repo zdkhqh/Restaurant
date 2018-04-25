@@ -3,7 +3,7 @@ package service;
 import com.jfinal.kit.LogKit;
 import com.jfinal.plugin.activerecord.Page;
 import model.Admin;
-import util.UserThreadContext;
+import util.AdminThreadContext;
 
 import java.util.Map;
 
@@ -29,14 +29,14 @@ public class AdminService {
             if (password.equals(admin.getPassword())) { //验证通过
                 //设置登陆账号信息到本地线程
 
-                UserThreadContext.setId(admin.getId());
-                UserThreadContext.setUsername(admin.getUsername());
-                UserThreadContext.setNickname(admin.getNickname());
+                AdminThreadContext.setId(admin.getId());
+                AdminThreadContext.setUsername(admin.getUsername());
+                AdminThreadContext.setNickname(admin.getNickname());
                 return true;
             }
         }
         //验证失败
-        UserThreadContext.get().invalidate();
+        AdminThreadContext.get().invalidate();
         return false;
     }
 
@@ -46,7 +46,7 @@ public class AdminService {
      */
     public static boolean loginOut() {
         try {
-            UserThreadContext.get().invalidate();
+            AdminThreadContext.get().invalidate();
             return true;
         } catch (Exception e) {
             LogKit.error("### 登出失败 ###", e);

@@ -6,7 +6,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
-        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -20,7 +19,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: com.jfinal:jetty-server:8.1.8" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-xml:8.1.8.v20121106" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:8.1.8.v20121106" level="project" />

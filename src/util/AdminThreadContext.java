@@ -2,7 +2,7 @@ package util;
 
 import javax.servlet.http.HttpSession;
 
-public class UserThreadContext {
+public class AdminThreadContext {
     private static ThreadLocal<HttpSession> threadLocal = new ThreadLocal<HttpSession>();
 
     public static HttpSession get() {

@@ -2,7 +2,7 @@
 2018-04-24 11:32:23
 [ERROR]-[Thread: qtp710239027-25]-[com.jfinal.core.ActionHandler.handle()]: /?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setAdmin(UserThreadContext.java:27)
+	at util.AdminThreadContext.setAdmin(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.index(LoginController.java:15)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -39,7 +39,7 @@ java.lang.NullPointerException
 2018-04-24 11:33:46
 [ERROR]-[Thread: qtp710239027-24]-[com.jfinal.core.ActionHandler.handle()]: /?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setAdmin(UserThreadContext.java:27)
+	at util.AdminThreadContext.setAdmin(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.index(LoginController.java:15)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -76,7 +76,7 @@ java.lang.NullPointerException
 2018-04-24 11:33:53
 [ERROR]-[Thread: qtp710239027-24]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setAdmin(UserThreadContext.java:27)
+	at util.AdminThreadContext.setAdmin(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -113,7 +113,7 @@ java.lang.NullPointerException
 2018-04-24 12:57:09
 [ERROR]-[Thread: qtp710239027-24]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setAdmin(UserThreadContext.java:27)
+	at util.AdminThreadContext.setAdmin(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -150,7 +150,7 @@ java.lang.NullPointerException
 2018-04-24 12:57:54
 [ERROR]-[Thread: qtp710239027-25]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setAdmin(UserThreadContext.java:28)
+	at util.AdminThreadContext.setAdmin(UserThreadContext.java:28)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -187,7 +187,7 @@ java.lang.NullPointerException
 2018-04-24 13:02:31
 [ERROR]-[Thread: qtp710239027-24]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:27)
+	at util.AdminThreadContext.setId(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -224,7 +224,7 @@ java.lang.NullPointerException
 2018-04-24 13:15:30
 [ERROR]-[Thread: qtp710239027-20]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:25)
+	at util.AdminThreadContext.setId(UserThreadContext.java:25)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -261,7 +261,7 @@ java.lang.NullPointerException
 2018-04-24 13:41:12
 [ERROR]-[Thread: qtp710239027-25]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:25)
+	at util.AdminThreadContext.setId(UserThreadContext.java:25)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -298,7 +298,7 @@ java.lang.NullPointerException
 2018-04-24 13:54:20
 [ERROR]-[Thread: qtp710239027-24]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:25)
+	at util.AdminThreadContext.setId(UserThreadContext.java:25)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -335,7 +335,7 @@ java.lang.NullPointerException
 2018-04-24 13:58:31
 [ERROR]-[Thread: qtp710239027-23]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:27)
+	at util.AdminThreadContext.setId(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -372,7 +372,7 @@ java.lang.NullPointerException
 2018-04-24 14:43:34
 [ERROR]-[Thread: qtp710239027-21]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:27)
+	at util.AdminThreadContext.setId(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -409,7 +409,7 @@ java.lang.NullPointerException
 2018-04-24 18:44:18
 [ERROR]-[Thread: qtp1502635287-21]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:25)
+	at util.AdminThreadContext.setId(UserThreadContext.java:25)
 	at service.AdminService.loginCheck(AdminService.java:31)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -446,7 +446,7 @@ java.lang.NullPointerException
 2018-04-24 19:12:21
 [ERROR]-[Thread: qtp1502635287-22]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:25)
+	at util.AdminThreadContext.setId(UserThreadContext.java:25)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -484,7 +484,7 @@ java.lang.NullPointerException
 2018-04-24 19:13:42
 [ERROR]-[Thread: qtp1502635287-25]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:25)
+	at util.AdminThreadContext.setId(UserThreadContext.java:25)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -522,7 +522,7 @@ java.lang.NullPointerException
 2018-04-24 19:26:32
 [ERROR]-[Thread: qtp1502635287-22]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:25)
+	at util.AdminThreadContext.setId(UserThreadContext.java:25)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -560,7 +560,7 @@ java.lang.NullPointerException
 2018-04-24 19:27:53
 [ERROR]-[Thread: qtp1502635287-22]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:26)
+	at util.AdminThreadContext.setId(UserThreadContext.java:26)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -598,7 +598,7 @@ java.lang.NullPointerException
 2018-04-24 19:28:06
 [ERROR]-[Thread: qtp1502635287-24]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:26)
+	at util.AdminThreadContext.setId(UserThreadContext.java:26)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -636,7 +636,7 @@ java.lang.NullPointerException
 2018-04-24 19:35:01
 [ERROR]-[Thread: qtp1502635287-20]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:26)
+	at util.AdminThreadContext.setId(UserThreadContext.java:26)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -674,7 +674,7 @@ java.lang.NullPointerException
 2018-04-24 19:35:29
 [ERROR]-[Thread: qtp1502635287-21]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:27)
+	at util.AdminThreadContext.setId(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -712,7 +712,7 @@ java.lang.NullPointerException
 2018-04-24 19:35:38
 [ERROR]-[Thread: qtp1502635287-22]-[com.jfinal.core.ActionHandler.handle()]: /login?username=1&password=1
 java.lang.NullPointerException
-	at util.UserThreadContext.setId(UserThreadContext.java:27)
+	at util.AdminThreadContext.setId(UserThreadContext.java:27)
 	at service.AdminService.loginCheck(AdminService.java:32)
 	at controller.LoginController.login(LoginController.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
