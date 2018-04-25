@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://localhost/restaurant?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = root
+password =643155
+devMode = true
