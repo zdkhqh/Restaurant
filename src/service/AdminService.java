@@ -55,7 +55,7 @@ public class AdminService {
     }
 
     public static Page<Admin> page(int pageNumber, int pageSize) {
-        return dao.paginate(pageNumber, pageSize, "select *", "from blog order by id asc");
+        return dao.paginate(pageNumber, pageSize, "select *", "from admin");
     }
 
     public static Admin getById(int id) {

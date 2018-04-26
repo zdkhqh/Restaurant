@@ -1,12 +1,16 @@
 package controller;
 
 import com.jfinal.core.Controller;
+import com.jfinal.kit.Ret;
+import com.jfinal.plugin.activerecord.Page;
+import model.Admin;
+import service.AdminService;
 import util.AdminThreadContext;
 import util.TimeUtil;
 
 public class AdminController extends Controller {
     /**
-     * 管理员信息
+     * 设置当前登录管理员信息
      */
     private void setCurrentAdmin() {
         setAttr("admin_id", AdminThreadContext.getId());//设置管理员id
@@ -26,8 +30,9 @@ public class AdminController extends Controller {
     /**
      * 管理员列表展示
      */
-    public void getAdminList(){
-
+    public void getAdminPage() {
+        Page<Admin> adminList = AdminService.page(getParaToInt("page_number",1), getParaToInt("page_size",10));
+        renderJson(Ret.ok("data", adminList));
     }
 
 }
