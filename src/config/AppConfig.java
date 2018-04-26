@@ -3,7 +3,6 @@ package config;
 import com.jfinal.config.*;
 import com.jfinal.core.JFinal;
 import com.jfinal.handler.Handler;
-import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.render.ViewType;
@@ -19,6 +18,14 @@ import javax.servlet.http.HttpServletResponse;
 public class AppConfig extends JFinalConfig {
 
     public static void main(String[] args) {
+        //加载配置
+        WebConfig.init();
+        //输出配置
+        WebConfig.printParam();
+
+        //数据库管理
+        FlywayApp.migrate();
+
         /**
          * 特别注意：Eclipse 之下的启动方式
          */
@@ -27,7 +34,7 @@ public class AppConfig extends JFinalConfig {
         /**
          * 特别注意：IDEA 之下的启动方式，仅比 eclipse 之下少了最后一个参数
          */
-        JFinal.start("WebRoot", 80, "/");
+        JFinal.start("WebRoot", WebConfig.web_listen_port, "/");
     }
 
     @Override
@@ -40,9 +47,7 @@ public class AppConfig extends JFinalConfig {
      */
     @Override
     public void configConstant(Constants me) {
-        // 加载少量必要配置，随后可用PropKit.get(...)获取值
-        PropKit.use("config.txt");
-        me.setDevMode(PropKit.getBoolean("devMode", false));
+        me.setDevMode(WebConfig.devMode);
         me.setEncoding("utf-8");
         me.setViewType(ViewType.JSP);
     }
@@ -62,7 +67,7 @@ public class AppConfig extends JFinalConfig {
     }
 
     public static DruidPlugin createDruidPlugin() {
-        return new DruidPlugin(PropKit.get("jdbcUrl"), PropKit.get("user"), PropKit.get("password").trim());
+        return new DruidPlugin(WebConfig.db_url, WebConfig.db_user, WebConfig.db_password);
     }
 
     /**
@@ -79,9 +84,6 @@ public class AppConfig extends JFinalConfig {
         // 所有映射在 MappingKit 中自动化搞定
         _MappingKit.mapping(arp);
         me.add(arp);
-
-        //数据库管理
-        me.add(new FlywayApp());
     }
 
     /**

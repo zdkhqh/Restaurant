@@ -4,7 +4,6 @@ package model;
 import javax.sql.DataSource;
 import com.jfinal.kit.PathKit;
 import com.jfinal.kit.PropKit;
-import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.generator.Generator;
 import com.jfinal.plugin.druid.DruidPlugin;
 
@@ -19,7 +18,7 @@ import config.AppConfig;
 public class _JFinalDemoGenerator {
 	
 	public static DataSource getDataSource() {
-		PropKit.use("config.txt");
+		PropKit.use("webconfig.properties");
 		DruidPlugin druidPlugin = AppConfig.createDruidPlugin();
 		druidPlugin.start();
 		return druidPlugin.getDataSource();

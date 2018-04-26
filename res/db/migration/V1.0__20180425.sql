@@ -16,6 +16,8 @@
 
 SET FOREIGN_KEY_CHECKS = 0;
 
+USE `restaurant`;
+
 -- ----------------------------
 -- Table structure for admin
 -- ----------------------------
