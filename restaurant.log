@@ -455,7 +455,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -493,7 +493,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -531,7 +531,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -569,7 +569,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -607,7 +607,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -645,7 +645,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -683,7 +683,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -721,7 +721,7 @@ java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
 	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:83)
-	at config.AppConfig$1.handle(AppConfig.java:106)
+	at config.Run$1.handle(AppConfig.java:106)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:73)
 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
@@ -800,7 +800,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'res
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 
 2018-04-25 18:18:28
 [ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} init error
@@ -855,7 +855,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'res
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 
 2018-04-25 18:18:28
 [ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
@@ -881,7 +881,7 @@ com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'restaurant'
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -970,7 +970,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'res
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'restaurant'
 	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
 	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
@@ -1065,7 +1065,7 @@ com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'restaurant.admin' doesn't exist
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -1109,7 +1109,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'restaurant.adm
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'restaurant.admin' doesn't exist
 	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
 	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
@@ -1145,7 +1145,7 @@ org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: F
 	at org.flywaydb.core.Flyway.execute(Flyway.java:1629)
 	at org.flywaydb.core.Flyway.migrate(Flyway.java:1168)
 	at util.FlywayApp.migrate(FlywayApp.java:16)
-	at config.AppConfig.afterJFinalStart(AppConfig.java:36)
+	at config.Run.afterJFinalStart(AppConfig.java:36)
 	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:56)
 	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
@@ -1161,7 +1161,7 @@ org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: F
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 
 2018-04-25 18:26:34
 [ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Flyway Enterprise or MySQL upgrade required: MySQL 5.0 is past regular support by Oracle and no longer supported by Flyway Open Source or Pro, but still supported by Flyway Enterprise.
@@ -1173,7 +1173,7 @@ org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: F
 	at org.flywaydb.core.Flyway.execute(Flyway.java:1629)
 	at org.flywaydb.core.Flyway.migrate(Flyway.java:1168)
 	at util.FlywayApp.migrate(FlywayApp.java:17)
-	at config.AppConfig.afterJFinalStart(AppConfig.java:36)
+	at config.Run.afterJFinalStart(AppConfig.java:36)
 	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:56)
 	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
@@ -1189,7 +1189,7 @@ org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: F
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 
 2018-04-25 18:27:44
 [ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Flyway Enterprise or MySQL upgrade required: MySQL 5.0 is past regular support by Oracle and no longer supported by Flyway Open Source or Pro, but still supported by Flyway Enterprise.
@@ -1201,7 +1201,7 @@ org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: F
 	at org.flywaydb.core.Flyway.execute(Flyway.java:1629)
 	at org.flywaydb.core.Flyway.migrate(Flyway.java:1168)
 	at util.FlywayApp.migrate(FlywayApp.java:17)
-	at config.AppConfig.configPlugin(AppConfig.java:84)
+	at config.Run.configPlugin(AppConfig.java:84)
 	at com.jfinal.core.Config.configJFinal(Config.java:51)
 	at com.jfinal.core.JFinal.init(JFinal.java:63)
 	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
@@ -1219,7 +1219,7 @@ org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: F
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 
 2018-04-25 18:33:37
 [ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: util.FlywayApp. 
@@ -1251,7 +1251,7 @@ org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: F
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 
 2018-04-25 18:33:37
 [ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Plugin start error: util.FlywayApp. 
@@ -1276,7 +1276,7 @@ Flyway Enterprise or MySQL upgrade required: MySQL 5.0 is past regular support b
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:30)
+	at config.Run.main(AppConfig.java:30)
 Caused by: org.flywaydb.core.internal.exception.FlywayEnterpriseUpgradeRequiredException: Flyway Enterprise or MySQL upgrade required: MySQL 5.0 is past regular support by Oracle and no longer supported by Flyway Open Source or Pro, but still supported by Flyway Enterprise.
 	at org.flywaydb.core.internal.database.mysql.MySQLDatabase.ensureSupported(MySQLDatabase.java:80)
 	at org.flywaydb.core.internal.database.Database.<init>(Database.java:111)
@@ -1295,13 +1295,13 @@ java.lang.IllegalStateException: port: 80 already in use!
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:89)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:38)
+	at config.Run.main(AppConfig.java:38)
 
 2018-04-26 09:48:04
 [ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: 
 java.lang.NullPointerException
-	at config.AppConfig.createDruidPlugin(AppConfig.java:73)
-	at config.AppConfig.configPlugin(AppConfig.java:82)
+	at config.Run.createDruidPlugin(AppConfig.java:73)
+	at config.Run.configPlugin(AppConfig.java:82)
 	at com.jfinal.core.Config.configJFinal(Config.java:51)
 	at com.jfinal.core.JFinal.init(JFinal.java:63)
 	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
@@ -1319,4 +1319,4 @@ java.lang.NullPointerException
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:174)
-	at config.AppConfig.main(AppConfig.java:38)
+	at config.Run.main(AppConfig.java:38)

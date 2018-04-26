@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class AppConfig extends JFinalConfig {
+public class Run extends JFinalConfig {
 
     public static void main(String[] args) {
         //加载配置
@@ -83,6 +83,9 @@ public class AppConfig extends JFinalConfig {
         ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
         // 所有映射在 MappingKit 中自动化搞定
         _MappingKit.mapping(arp);
+        me.add(arp);
+        arp.setShowSql(WebConfig.devMode);
+        arp.setDevMode(WebConfig.devMode);
         me.add(arp);
     }
 
