@@ -28,7 +28,6 @@ public class AdminService {
         if (admin != null) {
             if (password.equals(admin.getPassword())) { //验证通过
                 //设置登陆账号信息到本地线程
-
                 AdminThreadContext.setId(admin.getId());
                 AdminThreadContext.setUsername(admin.getUsername());
                 AdminThreadContext.setNickname(admin.getNickname());
@@ -42,6 +41,7 @@ public class AdminService {
 
     /**
      * 登出，注销
+     *
      * @return
      */
     public static boolean loginOut() {
@@ -63,7 +63,7 @@ public class AdminService {
     }
 
     public static boolean deleteById(int id) {
-        return dao.deleteById(id);
+        return dao.findById().deleteById(id);
     }
 
     public static Admin getByUserName(String username) {
@@ -72,6 +72,11 @@ public class AdminService {
 
     public static boolean updateAdmin(Admin admin) {
         return admin.update();
+    }
+
+    public static int addAdmin(Admin admin) {
+        admin.save();
+        return admin.getId();
     }
 
 }

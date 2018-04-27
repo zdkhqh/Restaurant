@@ -57,6 +57,18 @@ public class AdminController extends Controller {
             renderJson(Ret.ok("data", "删除管理员失败!"));
         }
     }
+
+    /**
+     * 新增管理员
+     */
+    public void add_admin(){
+        Admin admin = getBean(Admin.class, "");
+        if (AdminService.addAdmin(admin)>0) {
+            renderJson(Ret.ok("data", "新增管理员成功!"));
+        } else {
+            renderJson(Ret.fail("error", "新增管理员失败!"));
+        }
+    }
 }
 
 
