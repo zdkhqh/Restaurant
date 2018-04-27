@@ -11,7 +11,7 @@ import config.Run;
 
 /**
  *
- * 在数据库表有任何变动时，运行一下 main 方法，极速响应变化进行代码重构
+ * 在数据库表有任何变动时，运行一下 main 方法，极速响应变化进行model代码重构
  */
 public class _ModelGenerator {
 	
@@ -49,8 +49,6 @@ public class _ModelGenerator {
 //		generator.setRemovedTableNamePrefixes("t_");
 		// 生成
 		generator.generate();
-
-
 	}
 }
 
