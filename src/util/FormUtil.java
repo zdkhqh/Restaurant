@@ -1,58 +1,59 @@
 package util;
 
 import com.jfinal.kit.StrKit;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 
 /**
- *  分页表单参数类
+ * 分页表单参数类
  */
-public class FormUtil extends HashMap<String,String> {
+public class FormUtil extends HashMap<String, String> {
     private int pageSize = 10; //分页大小
     private int pageNumber = 1; //当前页面
     private String orderName;
     private String orderType = "ASC";
 
-    public FormUtil(){}
+    public FormUtil() {
+    }
 
-    public FormUtil(Map<String,String[]> requestParameterMap){
-        requestParameterMap.entrySet().forEach( entry -> {
+    public FormUtil(Map<String, String[]> requestParameterMap) {
+        for (Entry<String, String[]> entry : requestParameterMap.entrySet()) {
             put(entry.getKey(), entry.getValue()[0]);
-        });
+        }
         paraInit();
     }
 
     //处理 a/1/b/2的情况
-    public FormUtil(String requestUrl){
+    public FormUtil(String requestUrl) {
         String[] list = requestUrl.split("\\/");
-        if (list.length > 1){
-            for(int i=0; i<list.length; i+=2){
-                put(list[i],list[i+1]);
+        if (list.length > 1) {
+            for (int i = 0; i < list.length; i += 2) {
+                put(list[i], list[i + 1]);
             }
         }
         paraInit();
     }
 
-    private void paraInit(){
+    private void paraInit() {
         //如果有页码
-        if(containsKey("page_number") && StrKit.notBlank(get("page_number"))){
+        if (containsKey("page_number") && StrKit.notBlank(get("page_number"))) {
             pageNumber = getInt("page_number");
         }
 
         //如果有分页大小
-        if(containsKey("page_size") && StrKit.notBlank(get("page_size"))){
+        if (containsKey("page_size") && StrKit.notBlank(get("page_size"))) {
             pageSize = getInt("page_size");
         }
 
         //如果有排序
-        if(containsKey("order_name") && StrKit.notBlank(get("order_name"))){
+        if (containsKey("order_name") && StrKit.notBlank(get("order_name"))) {
             orderName = get("order_name");
         }
 
         //如果有排序类型
-        if(containsKey("order_type") && StrKit.notBlank(get("order_type"))){
+        if (containsKey("order_type") && StrKit.notBlank(get("order_type"))) {
             orderType = get("order_type");
         }
     }
@@ -97,67 +98,51 @@ public class FormUtil extends HashMap<String,String> {
     }
 
     public String getPara(String name, String defaultValue) {
-        Optional<String> result = Optional.ofNullable(get(name));
-        return result.orElse(defaultValue);
+        if (get(name) == null) return defaultValue;
+        else return get(name);
     }
 
-    public String getParaExcludeAll(String name, String excludeValue) {
-        Optional<String> result = Optional.ofNullable(get(name))
-                .filter(str->!excludeValue.equals(str));
-        return result.orElse(null);
-    }
 
 
     private Integer toInt(String value, Integer defaultValue) {
-        if(StrKit.isBlank(value)) {
+        if (StrKit.isBlank(value)) {
             return defaultValue;
         } else {
             value = value.trim();
             return !value.startsWith("N") &&
-                    !value.startsWith("n")?
-                    Integer.valueOf(Integer.parseInt(value)):
+                    !value.startsWith("n") ?
+                    Integer.valueOf(Integer.parseInt(value)) :
                     Integer.valueOf(-Integer.parseInt(value.substring(1)));
         }
     }
 
     public Integer getInt(String name) {
-        return this.toInt(get(name), (Integer)null);
+        return this.toInt(get(name), (Integer) null);
     }
 
     public Integer getInt(String name, Integer defaultValue) {
         return this.toInt(get(name), defaultValue);
     }
 
-    public Integer getIntExcludeAll(String name, int excludeValue) {
-        Optional<Integer> result = Optional.ofNullable(getInt(name))
-                .filter(i -> i != excludeValue);
-        return result.orElse(null);
-    }
-
     private Long toLong(String value, Long defaultValue) {
-        if(StrKit.isBlank(value)) {
+        if (StrKit.isBlank(value)) {
             return defaultValue;
         } else {
             value = value.trim();
             return !value.startsWith("N") &&
-                    !value.startsWith("n")?
-                    Long.valueOf(Long.parseLong(value)):
+                    !value.startsWith("n") ?
+                    Long.valueOf(Long.parseLong(value)) :
                     Long.valueOf(-Long.parseLong(value.substring(1)));
         }
     }
 
     public Long getLong(String name) {
-        return this.toLong(get(name), (Long)null);
+        return this.toLong(get(name), (Long) null);
     }
 
     public Long getLong(String name, Long defaultValue) {
         return this.toLong(get(name), defaultValue);
     }
 
-    public Long getLongExcludeAll(String name, long excludeValue) {
-        Optional<Long> result = Optional.ofNullable(getLong(name))
-                .filter(i -> i != excludeValue);
-        return result.orElse(null);
-    }
 
 }
