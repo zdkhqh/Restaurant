@@ -12,7 +12,7 @@ import java.util.Map;
 public class FormUtil extends HashMap<String, String> {
     private int pageSize = 10; //分页大小
     private int pageNumber = 1; //当前页面
-    private String orderName;
+    private String orderName = "id";
     private String orderType = "ASC";
 
     public FormUtil() {

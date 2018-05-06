@@ -8,6 +8,6 @@ public class AdminRoutes extends Routes {
     @Override
     public void config() {
         add("/admin", AdminController.class);
-        addInterceptor(new AdminIntercept());   //登陆拦截器
+        //addInterceptor(new AdminIntercept());   //登陆拦截器
     }
 }

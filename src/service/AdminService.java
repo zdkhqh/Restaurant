@@ -8,9 +8,7 @@ import util.AdminThreadContext;
 import java.util.Map;
 
 public class AdminService {
-    /**
-     * 所有的 dao 对象也放在 Service 中
-     */
+
     private static final Admin dao = new Admin().dao();
 
     /***
@@ -52,10 +50,6 @@ public class AdminService {
             LogKit.error("### 登出失败 ###", e);
             return false;
         }
-    }
-
-    public static Page<Admin> page(int pageNumber, int pageSize) {
-        return dao.paginate(pageNumber, pageSize, "select *", "from admin");
     }
 
     public static Admin getById(int id) {

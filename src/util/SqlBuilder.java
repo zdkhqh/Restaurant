@@ -22,6 +22,6 @@ public class SqlBuilder<M extends Model<?>> {
         return (Page<M>) _model.paginate(
                 formUtil.getPageNumber(),
                 formUtil.getPageSize(),
-                "select\n*", "from\n" + _model.getClass().getSimpleName() + "\norder\nby\n" + formUtil.getOrderName() + "\n" + formUtil.getOrderType());
+                "select\t*", "from\t" + _model.getClass().getSimpleName() + "\norder\tby\t" + formUtil.getOrderName() + "\t" + formUtil.getOrderType()+"\n");
     }
 }

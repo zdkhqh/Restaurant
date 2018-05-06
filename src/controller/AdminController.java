@@ -6,6 +6,8 @@ import com.jfinal.plugin.activerecord.Page;
 import model.Admin;
 import service.AdminService;
 import util.AdminThreadContext;
+import util.FormUtil;
+import util.SqlBuilder;
 import util.TimeUtil;
 
 public class AdminController extends Controller {
@@ -31,8 +33,8 @@ public class AdminController extends Controller {
      * 管理员信息分页展示
      */
     public void get_admin_page() {
-        Page<Admin> adminList = AdminService.page(getParaToInt("page_number", 1), getParaToInt("page_size", 10));
-        renderJson(Ret.ok("data", adminList));
+        Page<Admin> adminPage = SqlBuilder.dao(Admin.dao).page(new FormUtil(getParaMap()));
+        renderJson(Ret.ok("data", adminPage));
     }
 
     /**
