@@ -2,17 +2,12 @@ package config;
 
 import com.jfinal.config.*;
 import com.jfinal.core.JFinal;
-import com.jfinal.handler.Handler;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
-import com.jfinal.render.ViewType;
 import com.jfinal.template.Engine;
 import intercept.SessionIntercept;
 import model._MappingKit;
 import util.FlywayApp;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 
 public class Run extends JFinalConfig {
@@ -103,12 +98,6 @@ public class Run extends JFinalConfig {
      */
     @Override
     public void configHandler(Handlers me) {
-        me.add(new Handler() {
-            @Override
-            public void handle(String target, HttpServletRequest request, HttpServletResponse response, boolean[] isHandled) {
-                request.setAttribute("cxt", request.getContextPath());
-                next.handle(target, request, response, isHandled);
-            }
-        });
+        me.add(new UrlHandler());
     }
 }

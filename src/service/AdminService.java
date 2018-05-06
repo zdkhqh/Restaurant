@@ -29,6 +29,7 @@ public class AdminService {
                 AdminThreadContext.setId(admin.getId());
                 AdminThreadContext.setUsername(admin.getUsername());
                 AdminThreadContext.setNickname(admin.getNickname());
+
                 return true;
             }
         }

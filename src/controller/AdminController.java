@@ -22,7 +22,7 @@ public class AdminController extends Controller {
     @Before(POST.class)
     public void login() {
         if (AdminService.loginCheck(getParaMap())) {
-            index();
+            redirect("/admin/index");
         } else {
             setAttr("msg", "账号或密码不得为空或错误！");
             render("/login.html");
@@ -36,7 +36,7 @@ public class AdminController extends Controller {
         Integer id = (Integer) getSession().getAttribute("id");
         if (id != null) {
             if (AdminService.loginOut()) {
-                renderJson(Ret.ok("data", "退出成功!"));
+                redirect("/admin/index");
                 return;
             }
         }
