@@ -57,7 +57,7 @@ public class AdminService {
     }
 
     public static boolean deleteById(int id) {
-        return dao.findById().deleteById(id);
+        return dao.deleteById(id);
     }
 
     public static Admin getByUserName(String username) {

@@ -11,7 +11,7 @@ public class AdminIntercept implements Interceptor {
     public void intercept(Invocation inv) {
         Integer id = (Integer) inv.getController().getSession().getAttribute("id");
         if (id == null) {
-            inv.getController().renderJson(Ret.fail("error", "请登录!").set("code", 401));
+            inv.getController().render("/login.html");
         } else {
             inv.invoke();
         }

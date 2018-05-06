@@ -49,7 +49,8 @@ public class Run extends JFinalConfig {
     public void configConstant(Constants me) {
         me.setDevMode(WebConfig.devMode);
         me.setEncoding("utf-8");
-        me.setViewType(ViewType.JSP);
+        me.setError404View("/404.html");
+        me.setError500View("/500.html");
     }
 
     /**
@@ -105,7 +106,7 @@ public class Run extends JFinalConfig {
         me.add(new Handler() {
             @Override
             public void handle(String target, HttpServletRequest request, HttpServletResponse response, boolean[] isHandled) {
-                request.setAttribute("ctx", request.getContextPath());
+                request.setAttribute("cxt", request.getContextPath());
                 next.handle(target, request, response, isHandled);
             }
         });

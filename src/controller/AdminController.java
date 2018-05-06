@@ -1,8 +1,12 @@
 package controller;
 
+import com.jfinal.aop.Before;
+import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
+import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Ret;
 import com.jfinal.plugin.activerecord.Page;
+import intercept.AdminIntercept;
 import model.Admin;
 import service.AdminService;
 import util.AdminThreadContext;
@@ -11,6 +15,34 @@ import util.SqlBuilder;
 import util.TimeUtil;
 
 public class AdminController extends Controller {
+    /**
+     * 登陆入口
+     */
+    @Clear(AdminIntercept.class)
+    @Before(POST.class)
+    public void login() {
+        if (AdminService.loginCheck(getParaMap())) {
+            index();
+        } else {
+            setAttr("msg", "账号或密码不得为空或错误！");
+            render("/login.html");
+        }
+    }
+
+    /**
+     * 登出
+     */
+    public void loginout() {
+        Integer id = (Integer) getSession().getAttribute("id");
+        if (id != null) {
+            if (AdminService.loginOut()) {
+                renderJson(Ret.ok("data", "退出成功!"));
+                return;
+            }
+        }
+        renderJson(Ret.fail("error", "退出失败!"));
+    }
+
     /**
      * 设置当前登录管理员信息
      */
@@ -23,10 +55,10 @@ public class AdminController extends Controller {
     /**
      * 获得当前管理员信息和时间信息,后台首页显示用
      */
-    public void get_current() {
+    public void index() {
         setCurrentAdmin();
         setAttr("time", TimeUtil.getDateYYYYMMDDEAByTime(TimeUtil.getNow()));
-        renderJson(TimeUtil.getDateYYYYMMDDEAByTime(TimeUtil.getNow()));
+        render("/index.html");
     }
 
     /**
@@ -63,13 +95,20 @@ public class AdminController extends Controller {
     /**
      * 新增管理员
      */
-    public void add_admin(){
+    public void add_admin() {
         Admin admin = getBean(Admin.class, "");
-        if (AdminService.addAdmin(admin)>0) {
+        if (AdminService.addAdmin(admin) > 0) {
             renderJson(Ret.ok("data", "新增管理员成功!"));
         } else {
             renderJson(Ret.fail("error", "新增管理员失败!"));
         }
+    }
+
+    /**
+     * 获得单个管理员信息
+     */
+    public void get_admin() {
+        renderJson(Ret.ok("data", AdminService.getById(getParaToInt("id"))));
     }
 }
 
