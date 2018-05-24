@@ -1,7 +1,9 @@
 package controller;
 
 import com.jfinal.core.Controller;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
 import model.Info;
 import util.FormUtil;
 import util.SqlBuilder;
@@ -14,7 +16,10 @@ public class InfoController extends Controller {
     }
 
     public void get_info() {
-        renderJson(SqlBuilder.dao(Info.dao).get_by_id(1));
+        Record record = Db.findFirst("select * from info where type = 1;");
+        if (record == null) record = new Record();
+        setAttr("info", record);
+        render("/get_info.html");
     }
 
     public void add_info() {
@@ -25,7 +30,7 @@ public class InfoController extends Controller {
         renderJson(SqlBuilder.dao(Info.dao).deleteById(getParaToInt("id")));
     }
 
-    public void update_info(){
+    public void update_info() {
         renderJson(SqlBuilder.dao(Info.dao).update(getBean(Info.class, "")));
     }
 }

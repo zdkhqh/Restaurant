@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -139,41 +139,53 @@
             <!--overview start-->
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-laptop"></i>后台首页</h3>
+                    <h3 class="page-header"><i class="fa fa-laptop"></i>公司简介</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i>后台首页</a></li>
+                        <li><i class="fa fa-home"></i>信息发布</a></li>
+                        <li><i class="icon_document_alt"></i>公司简介</li>
                     </ol>
                 </div>
             </div>
 
-            <div class="row">
+            <section class="panel">
+                <header class="panel-heading">
+                   填写公司简介信息
+                </header>
+                <div class="panel-body">
+                    <form class="form-horizontal " action="#">
+                        <!--date picker start-->
 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="info-box blue-bg">
-                        <i class="fa fa-thumbs-o-up"></i>
-                        <div class="count">#(time)，#(admin_name) 您好！</div>
-                    </div><!--/.info-box-->
-                </div><!--/.col-->
-
-            </div><!--/.row-->
-
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h2><i class="fa fa-map-marker red"></i><strong>世界地图</strong></h2>
-
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">标题</label>
+                            <div class="col-sm-6">
+                                <input id="cp1" type="text" value="#(info.title)" size="16" class="form-control">
+                            </div>
                         </div>
-                        <div class="panel-body-map">
-                            <div id="map" style="height:380px;"></div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">上次更新时间</label>
+                            <div class="col-sm-6">
+                                <div class="input-append date" id="dpYears" data-date='#(info.time)' data-date-format="yyyy-MM-dd HH:mm:ss" data-date-viewmode="years">
+                                    <input class="form-control" size="16" type="text" value='#(info.time)' readonly="">
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">上传图片</label>
+                            <div class="col-sm-6">
+                                <div class="input-prepend">
+                                    <input id="reservation" type="text" class=" form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <!--date picker end-->
+                        
+
+                    </form>
+
+
                 </div>
-
-            </div>
-
+            </section>
             <!-- project team & activity end -->
 
         </section>

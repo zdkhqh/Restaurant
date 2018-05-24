@@ -6,6 +6,6 @@ import controller.InfoController;
 public class HomeRoutes extends Routes {
     @Override
     public void config() {
-        add("/info", InfoController.class);
+
     }
 }

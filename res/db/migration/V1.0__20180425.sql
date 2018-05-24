@@ -3,20 +3,19 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50086
- Source Host           : localhost:3306
+ Source Server Version : 50722
+ Source Host           : localhost:3307
  Source Schema         : restaurant
 
  Target Server Type    : MySQL
- Target Server Version : 50086
+ Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 25/04/2018 18:15:24
+ Date: 24/05/2018 20:46:58
 */
 
+SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
-
-USE `restaurant`;
 
 -- ----------------------------
 -- Table structure for admin
@@ -27,9 +26,13 @@ CREATE TABLE `admin`  (
   `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '账号',
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '密码',
   `nickname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '昵称',
-  PRIMARY KEY USING BTREE (`Id`)
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
+-- ----------------------------
+-- Records of admin
+-- ----------------------------
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', '朴学');
 
 -- ----------------------------
 -- Table structure for info
@@ -40,10 +43,15 @@ CREATE TABLE `info`  (
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '标题',
   `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '内容',
   `pic` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图片路径',
-  `time` int(11) NULL DEFAULT NULL COMMENT '发表时间',
-  `type` int(11) NULL DEFAULT NULL COMMENT '1:成长历程;2:创始人介绍;3:团队介绍;4:企业快讯;5:最新资讯;',
-  PRIMARY KEY USING BTREE (`Id`)
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin COMMENT = '餐厅介绍表' ROW_FORMAT = Compact;
+  `time` datetime(0) NULL DEFAULT NULL COMMENT '发表时间',
+  `type` int(11) NULL DEFAULT NULL COMMENT '1:公司简介;2:企业资讯;',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_bin COMMENT = '餐厅介绍表' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of info
+-- ----------------------------
+INSERT INTO `info` VALUES (1, '1', '1', '1', '2018-05-24 20:43:05', 1);
 
 -- ----------------------------
 -- Table structure for menu
@@ -55,7 +63,7 @@ CREATE TABLE `menu`  (
   `describe` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '描述',
   `price` double NULL DEFAULT NULL COMMENT '价格',
   `pic` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '图片路径',
-  PRIMARY KEY USING BTREE (`Id`)
+  PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin COMMENT = '菜单表' ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -70,7 +78,7 @@ CREATE TABLE `reserve`  (
   `phone` int(11) NULL DEFAULT NULL COMMENT '手机号码',
   `emial` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '邮箱',
   `add_time` int(11) NULL DEFAULT NULL COMMENT '提交时间',
-  PRIMARY KEY USING BTREE (`Id`)
+  PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;

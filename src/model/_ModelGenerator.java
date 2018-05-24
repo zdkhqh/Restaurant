@@ -8,6 +8,7 @@ import com.jfinal.plugin.activerecord.generator.Generator;
 import com.jfinal.plugin.druid.DruidPlugin;
 
 import config.Run;
+import config.WebConfig;
 
 /**
  *
@@ -16,6 +17,7 @@ import config.Run;
 public class _ModelGenerator {
 	
 	public static DataSource getDataSource() {
+		WebConfig.init();
 		PropKit.use("webconfig.properties");
 		DruidPlugin druidPlugin = Run.createDruidPlugin();
 		druidPlugin.start();
