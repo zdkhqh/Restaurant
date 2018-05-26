@@ -46,7 +46,7 @@ public class WebConfig {
     }
 
     public static void init() {
-        init(System.getProperty("user.dir") + File.separator + "res/webconfig.properties");
+        init(System.getProperty("user.dir") + File.separator + "webconfig.properties");
     }
 
     /**
