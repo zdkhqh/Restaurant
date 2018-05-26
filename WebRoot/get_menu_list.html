@@ -52,7 +52,7 @@
         </div>
 
         <!--logo start-->
-        <a class="logo">餐厅<span class="lite">后台管理</span></a>
+        <a class="logo" href="page/food.htm" target="_blank">餐厅<span class="lite">后台管理</span></a>
         <!--logo end-->
 
 
@@ -135,6 +135,16 @@
                     </ol>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg" onclick="openMyModal()"
+                            title="新增企业资讯">
+                        <i class="icon_plus_alt2"></i> 新增菜品
+                    </button>
+                </div>
+            </div>
+            <br/>
             #for(menu : menuList)
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
                  id="">
@@ -142,38 +152,59 @@
                     <p style="text-align: right">
                         <button type="button" id="b_menu" class="btn btn-default"
                                 aria-label="Justify" title="点击删除"
-                                onclick="#(menu.Id)">X
+                                onclick="del('#(cxt)/menu/delete_menu?id=#(menu.Id)')">X
                         </button>
                     </p>
-                    <form id="form#(menu.Id)" action="menu/add" method="post" enctype="multipart/form-data"
+                    <form id="form#(menu.Id)" action="menu/update" method="post" enctype="multipart/form-data"
                           style="text-align: center">
                         <input hidden="hidden" type="text" name="menu.Id" value="#(menu.Id)" readonly="readonly"
                                style="display: none;">
                         <p>
-                        <img src="upload/#(menu.pic)"
-                             onclick="getElementById('pic#(menu.Id)').click()"
-                             alt="图片加载失败" title=""
-                             id="preview#(menu.Id)"
-                             style="cursor:pointer;width: 200px;"/>
-                        <input style="display: none;"
-                               class="common-text required" id="pic#(menu.Id)" name="upload" size="20"
-                               type="file" onchange="change('#(menu.Id)')">
+                            <img src="upload/#(menu.pic)"
+                                 onclick="getElementById('pic#(menu.Id)').click()"
+                                 alt="点击上传图片" title="点击上传图片"
+                                 id="preview#(menu.Id)"
+                                 style="cursor:pointer;width: 200px;"/>
+                            <input style="display: none;"
+                                   class="common-text required" id="pic#(menu.Id)" name="upload" size="20"
+                                   type="file" onchange="change('#(menu.Id)')">
                         </p>
                         <div class="caption" style="text-align: center">
                             <h3>
-                                #(menu.title)
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4"
+                                           style="text-align: right;font-size: 18px;">菜名:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" name="menu.title" value=" #(menu.title)"
+                                               size="10"/>
+                                    </div>
+                                </div>
                             </h3>
                             <p>
-                                ￥：#(menu.price)
+                            <div class="form-group">
+                                <label class="control-label col-sm-4"
+                                       style="text-align: right;font-size: 18px;">价格(元):</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="number" name="menu.price" value="#(menu.price)"
+                                           size="10"/>
+                                </div>
+                            </div>
                             </p>
                             <p style="text-align: left">
-                                描述：#(menu.describe)
+                            <div class="form-group">
+                                <label class="control-label col-sm-4"
+                                       style="text-align: right;font-size: 18px;">描述:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" name="menu.describe"
+                                           value="#(menu.describe)" size="10"/>
+                                </div>
+                            </div>
                             </p>
                         </div>
                     </form>
                     <p style="text-align: center">
                         <button class="btn btn-default" type="button"
-                                onclick="">保存
+                                onclick="formSubmit('#(menu.Id)')">保存
                         </button>
                     </p>
 
@@ -185,6 +216,66 @@
     <!--main content end-->
 </section>
 <!-- container section start -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">新增或修改企业资讯</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="form" action="menu/update" method="post"
+                      enctype="multipart/form-data">
+                    <!--date picker start-->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">菜名：</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="menu.title" value="" size="16"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">价格(元)：</label>
+                        <div class="col-sm-6">
+                            <input type="number" name="menu.price" value="" size="16"
+                                   class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4">上传图片：</label>
+                        <div class="col-sm-8">
+                            <img id="preview" alt="请选择图片上传"
+                                 name="preview" width="260"
+                                 src="img/logo-big.png"><br> <input
+                                class="common-text required" id="pic" name="upload" size="20"
+                                type="file" onchange="change('')">
+                        </div>
+                    </div>
+                    <!-- CKEditor -->
+                    <div class="form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">描述：</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control "  name="menu.describe"
+                                          rows="8" title=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--date picker end-->
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="formSubmit('')">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- javascripts -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui-1.10.4.min.js"></script>
@@ -229,6 +320,23 @@
 <!-- ck editor -->
 <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 <script>
+    function openMyModal() {
+        //打开模态框
+        $('#myModal').modal('toggle');
+    }
+
+    function del(url) {
+        if (confirm("确认删除吗?")) {
+            window.location.href = url;
+        }
+    }
+
+    function formSubmit(id) {
+        if (confirm("确认保存吗?")) {
+            document.getElementById("form" + id).submit();
+        }
+    }
+
     function change(id) {
         var pic = document.getElementById("preview" + id),
             file = document.getElementById("pic" + id);

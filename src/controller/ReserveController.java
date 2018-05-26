@@ -1,9 +1,12 @@
 package controller;
 
+import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.Ret;
 import com.jfinal.plugin.activerecord.Db;
 import model.Reserve;
 
+import java.util.Date;
 import java.util.List;
 
 public class ReserveController extends Controller {
@@ -26,5 +29,19 @@ public class ReserveController extends Controller {
             reserve.update();
         }
         redirect("/reserve/get_reserve_list.html");
+    }
+
+    @Clear
+    public void add_reserve(){
+        Reserve reserve = getModel(Reserve.class,"reserve",true);
+        String date = getPara("date");
+        String time= getPara("time");
+        reserve.setUseTime(date+" "+time);
+        reserve.setAddTime(new Date());
+        if(reserve.save()){
+            renderJson(Ret.ok("msg",1));
+        }else{
+            renderJson(Ret.fail());
+        }
     }
 }

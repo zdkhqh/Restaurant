@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+<link href="css/css.css" rel="stylesheet">
+<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+<!--[if lt IE 9]>
+    <link href="css/ie.css" rel="stylesheet" type="text/css" >
+    <meta http-equiv="X-UA-Compatible" content="IE=8" >
+<![endif]-->
+<!--[if lte IE 6]><meta http-equiv="refresh" content="0;url=IE6/IE6.html"><![endif]-->
+<link href="favicon.ico" rel="SHORTCUT ICON">
+<title>我们的菜单一千零一夜</title>
+</head>
+<body cur="1" style="background-image:url(images/menu-bg.jpg)">
+    <div class="top">
+      <div class="header">
+        <div class="wrap clearfix pr">
+          <a href="index.html" class="logo"><em></em><i></i><span></span></a>
+          <ul class="nav fr">
+            <li>
+              <a href="about.html">餐厅介绍</a>
+            </li>
+            <li class="current">
+              <a href="food.html">我们的菜单</a>
+            </li>
+            <li><a href="Book.html">预定中心</a></li>
+            <li>
+              <a href="news.html">新闻资讯</a>
+            </li>
+
+            <li>
+              <a href="contact.html">联系我们</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrap">
+      <div class="w-title tc">
+        <p class="title">Main food</p>
+        <div class="name">
+          <span><em></em>主菜<i></i></span>
+        </div>
+      </div>
+      
+      <div class="menu-wrap">
+        <div class="menubox clearfix">
+          #for(menu : menuList)
+          <dl>
+            <dt><a href="../upload/#(menu.pic)" rel="lightbox[roadtrip]"><img src="../upload/#(menu.pic)" width="240" height="200"></a></dt>
+            <dd>
+              <p class="f16">#(menu.title)</p>
+              <div class="txt">#(menu.describe)</div>
+              <p class="price">￥ #(menu.price)</p>
+            </dd>
+          </dl>
+          #end
+        </div>
+        <!--<div class="page tc clearfix"><a href="#" class="prev"><em></em>上一页</a><span>1</span><a href="#" class="next">下一页<em></em></a></div>-->
+      </div>
+      
+    </div>
+       
+  
+  <a href="#" class="link-prev"></a>
+  <a href="#" class="link-next"></a>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/Action.js"></script>
+<script src="boxjs/prototype.js" type="text/javascript"></script>
+<script src="boxjs/scriptaculous.js?load=effects,builder" type="text/javascript"></script>
+<script src="boxjs/lightbox.js" type="text/javascript"></script>
+</html>

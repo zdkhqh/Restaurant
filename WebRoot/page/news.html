@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+    <base href="#(cxt)/page/"/>
+<link href="css/css.css" rel="stylesheet">
+<!--[if lt IE 9]>
+    <link href="css/ie.css" rel="stylesheet" type="text/css" >
+    <meta http-equiv="X-UA-Compatible" content="IE=8" >
+<![endif]-->
+<!--[if lte IE 6]><meta http-equiv="refresh" content="0;url=IE6/IE6.html"><![endif]-->
+<link href="favicon.ico" rel="SHORTCUT ICON">
+<title>企业资讯一千零一夜</title>
+</head>
+<body cur="4" style="background-image:url(images/news-bg.jpg)">
+    <div class="top">
+      <div class="header">
+        <div class="wrap clearfix pr">
+          <a href="index.html" class="logo"><em></em><i></i><span></span></a>
+            <ul class="nav fr">
+                <li>
+                    <a href="about.html">餐厅介绍</a>
+                </li>
+                <li>
+                    <a href="food.html">我们的菜单</a>
+                </li>
+                <li><a href="Book.html">预定中心</a></li>
+                <li class="current">
+                    <a href="news.html">新闻资讯</a>
+                </li>
+                <li>
+                    <a href="contact.html">联系我们</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrap">
+      <div class="w-title tc">
+        <p class="title">Business letters</p>
+        <div class="name">
+          <span><em></em>企业资讯<i></i></span>
+        </div>
+      </div>
+      
+      <div class="conwrap">
+        <div class="con-top bort">#(info.title) #if(isLast==true)<img src="images/new.png"/>#end</div>
+        <div class="con-bd">
+          <div class="txt clearfix">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;#(info.content)</p>
+          </div>
+            <p style="text-align: center;">
+          <img src="../upload/#(info.pic)" width="350">
+            </p>
+          <div class="pd35">
+            <ul class="newslist">
+                #for(info : infoList)
+                <li><span class="time">#date(info.time,"yyyy年MM月dd日")</span><a href="/news?id=#(info.Id)"> #(info.title)</a></li>
+                #end
+            </ul>
+          </div>
+        </div>
+        <div class="con-bottom"></div>
+      </div>
+      
+    </div>
+       
+  
+  <a href="#" class="link-prev"></a>
+  <a href="#" class="link-next"></a>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/Action.js"></script>
+</html>
