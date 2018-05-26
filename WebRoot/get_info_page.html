@@ -177,7 +177,8 @@
                                 <td><img height="66" alt="图片加载失败"
                                          src="upload/#(info.pic)"></td>
                                 <td>
-                                    <input style="border: 0;outline:none;" type="text" value="#(info.content)" title="#(info.content)" readonly/>
+                                    <input style="border: 0;outline:none;" type="text" value="#(info.content)"
+                                           title="#(info.content)" readonly/>
                                 </td>
                                 <td>
                                     <div class="btn-group">
@@ -193,10 +194,27 @@
                             #end
                             </tbody>
                         </table>
-                        #(infoPage.pageNumber)
-                        #(infoPage.pageSize)
-                        #(infoPage.totalRow)
-                        #(infoPage.totalPage)
+                        <div class="text-center">
+                            <ul class="pagination pagination-lg">
+                                <li><a class="btn disabled">共 #(infoPage.totalRow) 条</a></li>
+                                #if(infoPage.pageNumber==1)
+                                <li><a class="btn disabled">首页</a></li>
+                                <li><a class="btn disabled">上一页</a></li>
+                                #else
+                                <li><a class="btn btn-primary" href="info/get_info_page?page_number=1">首页</a></li>
+                                <li><a class="btn btn-primary" href="info/get_info_page?page_number=#(infoPage.pageNumber-1)">上一页</a></li>
+                                #end
+                                <li><a>#(infoPage.pageNumber)</a></li>
+                                #if(infoPage.pageNumber==infoPage.totalPage)
+                                <li><a class="btn disabled">下一页</a></li>
+                                <li><a class="btn disabled">尾页</a></li>
+                                #else
+                                <li><a class="btn btn-primary" href="info/get_info_page?page_number=#(infoPage.pageNumber+1)">下一页</a></li>
+                                <li><a class="btn btn-primary" href="info/get_info_page?page_number= #(infoPage.totalPage)">尾页</a></li>
+                                #end
+                                <li><a class="btn disabled">共 #(infoPage.totalPage) 页</a></li>
+                            </ul>
+                        </div>
                     </section>
                 </div>
             </div>

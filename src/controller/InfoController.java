@@ -45,7 +45,7 @@ public class InfoController extends Controller {
             info.setTime(new Date());
             if (info.getId() == null ? info.save() : info.update()) {
                 if (info.getType() == 1) redirect("get_info.html");
-                else redirect("/info/getnfo_page.html");
+                else redirect("/info/get_info_page.html");
                 return;
             }
         }
