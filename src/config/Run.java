@@ -46,6 +46,7 @@ public class Run extends JFinalConfig {
         me.setEncoding("utf-8");
         me.setError404View("/404.html");
         me.setError500View("/500.html");
+        me.setBaseUploadPath("upload/");
     }
 
     /**

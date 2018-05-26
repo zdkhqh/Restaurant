@@ -3,8 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="PuXue">
     <base href="#(cxt)/"/>
     <link rel="shortcut icon" href="img/favicon.png">
 
@@ -40,6 +38,7 @@
     <script src="js/respond.min.js"></script>
     <script src="js/lte-ie7.js"></script>
     <![endif]-->
+    <script src="js/show-pic.js"></script>
 </head>
 
 <body>
@@ -53,7 +52,7 @@
         </div>
 
         <!--logo start-->
-        <a href="index.html" class="logo">餐厅<span class="lite">后台管理</span></a>
+        <a class="logo">餐厅<span class="lite">后台管理</span></a>
         <!--logo end-->
 
 
@@ -152,8 +151,11 @@
                     填写公司简介信息
                 </header>
                 <div class="panel-body">
-                    <form class="form-horizontal " action="#" method="post">
+                    <form class="form-horizontal" id="myForm" action="info/add_info" method="post"
+                          enctype="multipart/form-data">
                         <!--date picker start-->
+                        <input hidden="hidden" type="text" name="info.Id" value="#(info.Id)" readonly="readonly" style="display: none;">
+                        <input hidden="hidden" type="text" name="info.type" value="1" readonly="readonly" style="display: none;">
                         <div class="form-group">
                             <label class="control-label col-sm-4">标题</label>
                             <div class="col-sm-6">
@@ -166,32 +168,36 @@
                             <div class="col-sm-6">
                                 <div class="input-append date" id="dpYears" data-date='#(info.time)'
                                      data-date-format="yyyy-MM-dd HH:mm:ss" data-date-viewmode="years">
-                                    <input class="form-control" size="16" type="text" value='#(info.time)' readonly="">
+                                    <input class="form-control" size="16" type="text" value='#(info.time)'
+                                           readonly="readonly">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-4">上传图片</label>
-                            <div class="col-sm-6">
-                                <div class="input-prepend">
-                                    <input id="reservation" type="text" class=" form-control">
-                                </div>
+                            <div class="col-sm-8">
+                                <img id="preview" alt="图片未上传"
+                                     name="preview" height="250"
+                                     src="upload/#(info.pic)"><br> <input
+                                    class="common-text required" id="pic" name="upload" size="20"
+                                    type="file" onchange="change()">
                             </div>
                         </div>
                         <!-- CKEditor -->
                         <div class="form">
-                            <form action="#" class="form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-sm-2">公司简介内容</label>
                                     <div class="col-sm-8">
-                                        <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+                                        <textarea class="form-control ckeditor" name="info.content" rows="6">#(info.content)</textarea>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                         <br/>
-                        <p class="text-center"><input class="btn btn-primary btn-lg text-center" value="保存" href="" title="保存" /></p>
+                        <p class="text-center"><input class="btn btn-primary btn-lg" onclick="formSubmit()"
+                                                      type="button"
+                                                      title="保存" value="保存"/>
+                        </p>
 
                         <!--date picker end-->
 
@@ -207,7 +213,6 @@
     <!--main content end-->
 </section>
 <!-- container section start -->
-
 <!-- javascripts -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui-1.10.4.min.js"></script>
@@ -252,7 +257,6 @@
 <!-- ck editor -->
 <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 <script>
-
     //knob
     $(function () {
         $(".knob").knob({
@@ -261,7 +265,6 @@
             }
         })
     });
-
     //carousel
     $(document).ready(function () {
         $("#owl-slider").owlCarousel({

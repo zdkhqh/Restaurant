@@ -13,7 +13,7 @@ public class FormUtil extends HashMap<String, String> {
     private int pageSize = 10; //分页大小
     private int pageNumber = 1; //当前页面
     private String orderName = "id";
-    private String orderType = "ASC";
+    private String orderType = "DESC";
 
     public FormUtil() {
     }
