@@ -13,10 +13,6 @@ import java.util.Date;
 
 
 public class InfoController extends Controller {
-    private static final String RESULT_MESSAGE = "result_message";
-    private static final int SUCCESS = 1;
-    private static final int FAIL = 0;
-    private static final int ERROR = -1;
 
     public void get_info_page() {
         FormUtil formUtil = new FormUtil(getParaMap());

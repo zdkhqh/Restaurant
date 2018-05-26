@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -38,6 +38,7 @@
     <script src="js/respond.min.js"></script>
     <script src="js/lte-ie7.js"></script>
     <![endif]-->
+    <script src="js/show-pic.js"></script>
 </head>
 
 <body>
@@ -86,7 +87,7 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
-                <li class="active">
+                <li class="">
                     <a class="" href="admin/index">
                         <i class="icon_house_alt"></i>
                         <span>后台首页</span>
@@ -99,12 +100,12 @@
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="info/get_info">公司简介</a></li>
+                        <li class=""><a class="" href="info/get_info">公司简介</a></li>
                         <li><a class="" href="info/get_info_page">企业资讯</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a class="" href="reserve/get_reserve_list">
+                <li class="active">
+                    <a href="reserve/get_reserve_list">
                         <i class="icon_genius"></i>
                         <span>用餐预定</span>
                     </a>
@@ -125,52 +126,100 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <!--overview start-->
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-laptop"></i>后台首页</h3>
+                    <h3 class="page-header"><i class="fa fa-user-md"></i> 用餐预定</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i>后台首页</a></li>
+                        <li><i class="fa fa-user-md"></i>用餐预定</li>
                     </ol>
                 </div>
             </div>
-
             <div class="row">
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="info-box blue-bg">
-                        <i class="fa fa-thumbs-o-up"></i>
-                        <div class="count">#(time)，#(admin_name) 您好！</div>
-                    </div><!--/.info-box-->
-                </div><!--/.col-->
-
-            </div><!--/.row-->
-
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h2><i class="fa fa-map-marker red"></i><strong>世界地图</strong></h2>
-
+                <!-- profile-widget -->
+                <div class="col-lg-12">
+                    <div class="profile-widget profile-widget-info">
+                        <div class="panel-body">
                         </div>
-                        <div class="panel-body-map">
-                            <div id="map" style="height:380px;"></div>
-                        </div>
-
                     </div>
                 </div>
+            </div>
+            <!-- page start-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading tab-bg-info">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a data-toggle="tab" href="#recent-activity">
+                                        <i class="icon-home"></i>
+                                        最新预定用餐（#(falseStatusCount)）
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a data-toggle="tab" href="#profile">
+                                        <i class="icon-user"></i>
+                                        已处理记录（#(trueStatusCount)）
+                                    </a>
+                                </li>
+                            </ul>
+                        </header>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div id="recent-activity" class="tab-pane active">
+                                    <div class="profile-activity" style="font-size: 18px">
+                                        <p></p>
+                                        #for(reserve : falseStatusList)
+                                        <div class="act-time">
+                                            <div class="activity-body act-in">
+                                                <span class="arrow"></span>
+                                                <div class="text">
+                                                    <a class="activity-img"><img class="avatar" src="img/yuding.jpg" alt="预定"></a>
+                                                    <p class="attribution"><a>#(reserve.name) </a> #date(reserve.add_time,"yyyy年MM月dd日 HH时mm分ss秒")</p>
+                                                    <p class="attribution">手机号：#(reserve.phone)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：#(reserve.emial)</p>
+                                                    <p>
+                                                        使用时间：#(reserve.use_time)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用人数：#(reserve.num)
+                                                        <button style="margin-left: 150px;" type="button" class="btn btn-primary" onclick="dealReserve('#(reserve.Id)')"
+                                                                title="新增企业资讯">已由人工处理该条预定信息</button>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        #end
+                                    </div>
+                                </div>
+                                <!-- profile -->
+                                <div id="profile" class="tab-pane">
+                                    <div class="profile-activity" style="font-size: 18px">
+                                        <p></p>
+                                        #for(reserve : trueStatusList)
+                                        <div class="act-time">
+                                            <div class="activity-body act-in" style="background-color: #F5F5F5">
+                                                <span class="arrow"></span>
+                                                <div class="text">
+                                                    <a class="activity-img"><img class="avatar" src="img/yuding.jpg" alt="预定"></a>
+                                                    <p class="attribution"><a>#(reserve.name) </a> #date(reserve.add_time,"yyyy年MM月dd日 HH时mm分ss秒")</p>
+                                                    <p class="attribution">手机号：#(reserve.phone)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：#(reserve.emial)</p>
+                                                    <p>使用时间：#(reserve.use_time)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用人数：#(reserve.num)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        #end
 
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
 
-            <!-- project team & activity end -->
-
+            <!-- page end-->
         </section>
     </section>
     <!--main content end-->
 </section>
 <!-- container section start -->
-
 <!-- javascripts -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui-1.10.4.min.js"></script>
@@ -212,7 +261,14 @@
 <script src="js/sparklines.js"></script>
 <script src="js/charts.js"></script>
 <script src="js/jquery.slimscroll.min.js"></script>
+<!-- ck editor -->
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 <script>
+    function dealReserve(id){
+        if (confirm("确认该条预定信息已被人工处理了吗?")) {
+            window.location.href = '#(cxt)/reserve/update?id='+id;
+        }
+    }
 
     //knob
     $(function () {
@@ -222,7 +278,6 @@
             }
         })
     });
-
     //carousel
     $(document).ready(function () {
         $("#owl-slider").owlCarousel({

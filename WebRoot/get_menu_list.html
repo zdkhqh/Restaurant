@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -38,6 +38,7 @@
     <script src="js/respond.min.js"></script>
     <script src="js/lte-ie7.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -69,6 +70,7 @@
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
+
                         <li>
                             <a href="admin/loginout?id=#(admin_id)"><i class="icon_clock_alt"></i>注销登陆</a>
                         </li>
@@ -86,20 +88,20 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
-                <li class="active">
+                <li class="">
                     <a class="" href="admin/index">
                         <i class="icon_house_alt"></i>
                         <span>后台首页</span>
                     </a>
                 </li>
-                <li class="sub-menu">
+                <li class="active sub-menu">
                     <a href="javascript:;" class="">
                         <i class="icon_document_alt"></i>
                         <span>信息发布</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="info/get_info">公司简介</a></li>
+                        <li class=""><a class="" href="info/get_info">公司简介</a></li>
                         <li><a class="" href="info/get_info_page">企业资讯</a></li>
                     </ul>
                 </li>
@@ -125,52 +127,64 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <!--overview start-->
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-laptop"></i>后台首页</h3>
+                    <h3 class="page-header"><i class="fa fa-align-justify"></i> 菜单列表</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i>后台首页</a></li>
+                        <li><i class="fa fa-align-justify"></i>菜单列表</li>
                     </ol>
                 </div>
             </div>
-
-            <div class="row">
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="info-box blue-bg">
-                        <i class="fa fa-thumbs-o-up"></i>
-                        <div class="count">#(time)，#(admin_name) 您好！</div>
-                    </div><!--/.info-box-->
-                </div><!--/.col-->
-
-            </div><!--/.row-->
-
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h2><i class="fa fa-map-marker red"></i><strong>世界地图</strong></h2>
-
+            #for(menu : menuList)
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+                 id="">
+                <div class="thumbnail">
+                    <p style="text-align: right">
+                        <button type="button" id="b_menu" class="btn btn-default"
+                                aria-label="Justify" title="点击删除"
+                                onclick="#(menu.Id)">X
+                        </button>
+                    </p>
+                    <form id="form#(menu.Id)" action="menu/add" method="post" enctype="multipart/form-data"
+                          style="text-align: center">
+                        <input hidden="hidden" type="text" name="menu.Id" value="#(menu.Id)" readonly="readonly"
+                               style="display: none;">
+                        <p>
+                        <img src="upload/#(menu.pic)"
+                             onclick="getElementById('pic#(menu.Id)').click()"
+                             alt="图片加载失败" title=""
+                             id="preview#(menu.Id)"
+                             style="cursor:pointer;width: 200px;"/>
+                        <input style="display: none;"
+                               class="common-text required" id="pic#(menu.Id)" name="upload" size="20"
+                               type="file" onchange="change('#(menu.Id)')">
+                        </p>
+                        <div class="caption" style="text-align: center">
+                            <h3>
+                                #(menu.title)
+                            </h3>
+                            <p>
+                                ￥：#(menu.price)
+                            </p>
+                            <p style="text-align: left">
+                                描述：#(menu.describe)
+                            </p>
                         </div>
-                        <div class="panel-body-map">
-                            <div id="map" style="height:380px;"></div>
-                        </div>
+                    </form>
+                    <p style="text-align: center">
+                        <button class="btn btn-default" type="button"
+                                onclick="">保存
+                        </button>
+                    </p>
 
-                    </div>
                 </div>
-
             </div>
-
-            <!-- project team & activity end -->
-
+            #end
         </section>
     </section>
     <!--main content end-->
 </section>
 <!-- container section start -->
-
 <!-- javascripts -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui-1.10.4.min.js"></script>
@@ -212,7 +226,50 @@
 <script src="js/sparklines.js"></script>
 <script src="js/charts.js"></script>
 <script src="js/jquery.slimscroll.min.js"></script>
+<!-- ck editor -->
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 <script>
+    function change(id) {
+        var pic = document.getElementById("preview" + id),
+            file = document.getElementById("pic" + id);
+
+        var ext = file.value.substring(file.value.lastIndexOf(".") + 1).toLowerCase();
+
+        // gif在IE浏览器暂时无法显示
+        if (ext != 'png' && ext != 'jpg' && ext != 'jpeg' && ext != 'gif') {
+            alert("图片的格式必须为png或者jpg或者jpeg或者gif格式！");
+            return;
+        }
+        var isIE = navigator.userAgent.match(/MSIE/) != null,
+            isIE6 = navigator.userAgent.match(/MSIE 6.0/) != null;
+
+        if (isIE) {
+            file.select();
+            var reallocalpath = document.selection.createRange().text;
+
+            // IE6浏览器设置img的src为本地路径可以直接显示图片
+            if (isIE6) {
+                pic.src = reallocalpath;
+            } else {
+                // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现
+                pic.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src=\"" + reallocalpath + "\")";
+                // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
+                pic.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+            }
+        } else {
+            html5Reader(file, id);
+        }
+    }
+
+    function html5Reader(file, id) {
+        var file = file.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+            var pic = document.getElementById("preview" + id);
+            pic.src = this.result;
+        }
+    }
 
     //knob
     $(function () {
@@ -222,7 +279,6 @@
             }
         })
     });
-
     //carousel
     $(document).ready(function () {
         $("#owl-slider").owlCarousel({

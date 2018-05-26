@@ -63,13 +63,22 @@ public abstract class BaseReserve<M extends BaseReserve<M>> extends Model<M> imp
 		return getStr("emial");
 	}
 
-	public M setAddTime(java.lang.Integer addTime) {
+	public M setAddTime(java.util.Date addTime) {
 		set("add_time", addTime);
 		return (M)this;
 	}
 	
-	public java.lang.Integer getAddTime() {
-		return getInt("add_time");
+	public java.util.Date getAddTime() {
+		return getDate("add_time");
+	}
+
+	public M setStatus(java.lang.Boolean status) {
+		set("status", status);
+		return (M)this;
+	}
+
+	public java.lang.Boolean getStatus() {
+		return getBoolean("status");
 	}
 
 }
