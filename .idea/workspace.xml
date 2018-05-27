@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="839303f7-6b56-49db-9711-e591d12efceb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/get_info.html" afterPath="$PROJECT_DIR$/WebRoot/get_info.html" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/get_menu_list.html" afterPath="$PROJECT_DIR$/WebRoot/get_menu_list.html" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/page/food.html" afterPath="$PROJECT_DIR$/WebRoot/page/food.html" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/page/news.html" afterPath="$PROJECT_DIR$/WebRoot/page/news.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -493,7 +489,7 @@
       <workItem from="1527295196001" duration="23491000" />
       <workItem from="1527332639525" duration="22655000" />
       <workItem from="1527372818901" duration="3807000" />
-      <workItem from="1527376899475" duration="3762000" />
+      <workItem from="1527376899475" duration="3795000" />
     </task>
     <task id="LOCAL-00001" summary="201805061100">
       <created>1525575651278</created>
@@ -600,15 +596,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527378591228</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="201805270847">
+      <created>1527382090021</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1527382090022</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89524000" />
+    <option name="totallyTimeSpent" value="89557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gerrit" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -620,7 +622,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41082802" sideWeight="0.7453125" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41082802" sideWeight="0.7453125" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -675,7 +677,8 @@
     <MESSAGE value="201805270717" />
     <MESSAGE value="201805270725" />
     <MESSAGE value="201805270748" />
-    <option name="LAST_COMMIT_MESSAGE" value="201805270748" />
+    <MESSAGE value="201805270847" />
+    <option name="LAST_COMMIT_MESSAGE" value="201805270847" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
