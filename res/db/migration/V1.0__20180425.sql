@@ -1,5 +1,5 @@
 # Host: 127.0.0.1  (Version 5.7.22-log)
-# Date: 2018-05-27 08:53:05
+# Date: 2018-05-27 10:16:51
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -20,33 +20,7 @@ CREATE TABLE `admin` (
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (1,'admin','admin','蒲雪');
-
-#
-# Structure for table "flyway_schema_history"
-#
-
-DROP TABLE IF EXISTS `flyway_schema_history`;
-CREATE TABLE `flyway_schema_history` (
-  `installed_rank` int(11) NOT NULL,
-  `version` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `description` varchar(200) COLLATE utf8_bin NOT NULL,
-  `type` varchar(20) COLLATE utf8_bin NOT NULL,
-  `script` varchar(1000) COLLATE utf8_bin NOT NULL,
-  `checksum` int(11) DEFAULT NULL,
-  `installed_by` varchar(100) COLLATE utf8_bin NOT NULL,
-  `installed_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `execution_time` int(11) NOT NULL,
-  `success` tinyint(1) NOT NULL,
-  PRIMARY KEY (`installed_rank`),
-  KEY `flyway_schema_history_s_idx` (`success`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
-#
-# Data for table "flyway_schema_history"
-#
-
-INSERT INTO `flyway_schema_history` VALUES (1,'1.0','20180425','SQL','V1.0__20180425.sql',1329521316,'root','2018-05-24 21:27:39',315,1);
+INSERT INTO `admin` VALUES (1,'admin','admin','朴学');
 
 #
 # Structure for table "info"
@@ -104,7 +78,7 @@ CREATE TABLE `reserve` (
   `add_time` datetime DEFAULT NULL COMMENT '提交时间',
   `status` bit(1) NOT NULL DEFAULT b'0' COMMENT '处理状态，false未处理，true已处理',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
 #
 # Data for table "reserve"
