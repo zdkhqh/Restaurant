@@ -20,7 +20,7 @@ CREATE TABLE `admin` (
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (1,'admin','admin','朴学');
+INSERT INTO `admin` VALUES (1,'admin','admin','蒲雪');
 
 #
 # Structure for table "flyway_schema_history"
